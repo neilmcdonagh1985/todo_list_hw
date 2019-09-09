@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To do List</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+    <h1>To do List</h1>
+  <div id="app">
+    <ul>
+      <li v-for="(todo, index) in todos"
+      v-bind:class="{'done': todo.done, 'notDone': !todo.done}">
+        <span>{{ todo.task }}</span>
+        <span></span>
+        <button v-if="todo.done" v-on:click="doTask(index)">
+            Click if done
+        </button>
+      </li>
+    </ul>
+
+    <input type="text" v-model="newTodo">
+    <button v-on:click="addNewItem">Add New Task</button>
+
+  </div>
+</body>
+</html>
