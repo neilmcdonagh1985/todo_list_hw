@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.newTodo = "";  
             },
             doTask: function(index) {
-                this.todos[index].done = true;
+                this.todos[index].done = false;
             }
 
         }
